@@ -11,6 +11,7 @@ import Foundation
 class CreateTinyUrlViewModel {
     
     var isRefreshing: ((Bool) -> Void)?
+    var hasError: ((String) -> Void)?
     var didTransformUrl: ((Bool) -> Void)?
     
     private var lastUrl: String?
@@ -28,11 +29,19 @@ class CreateTinyUrlViewModel {
     }
     
     func transformUrl(_ url: String) {
-//        guard url.isValidURL() else {
-//            return
-//        }
+         isRefreshing?(true)
+        var urlFinal = url
         
-        networkingService.transformUrl(withQuery: url) { [weak self] urlTransform in
+        if(!url.contains("https://") || !url.contains("http://")) {
+            urlFinal = "https://\(url)"
+        }
+        
+        if !urlFinal.isValidURL() {
+            hasError?("Not a valid URL")
+            return
+        }
+        
+        networkingService.transformUrl(withQuery: url) { [weak self] (urlTransform, success) in
             
             guard let strongSelf  = self else { return }
             
@@ -49,8 +58,7 @@ class CreateTinyUrlViewModel {
     }
     
     private func finishTransform() {
-        isRefreshing?(false)
-  
+        isRefreshing?(false)  
     }
     
     

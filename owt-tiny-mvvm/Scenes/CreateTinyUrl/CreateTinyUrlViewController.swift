@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class CreateTinyUrlViewController: UIViewController {
 
@@ -28,18 +29,32 @@ class CreateTinyUrlViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController!.navigationBar.topItem!.title = ""
+        
+        SVProgressHUD.setBackgroundColor(.orange)
+        SVProgressHUD.setForegroundColor(.white)
+        
         self.setupViewModel()
     }
     
     private func setupViewModel() {
 
         viewModel.isRefreshing = { loading in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = loading
+            SVProgressHUD.show()
         }
         viewModel.didTransformUrl = { [weak self] success in
             guard let strongSelf = self else { return }
+            SVProgressHUD.showSuccess(withStatus: "Linked shortened and copied on clipboard")
+            sleep(2)
             strongSelf.navigationController?.popViewController(animated: true)
-        }   
+        }
+        
+        viewModel.hasError = { [weak self] error in
+             guard let strongSelf = self else { return }
+            let alertController = UIAlertController(title: "TinyUrl", message: error, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            strongSelf.present(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func transformUrlAction(_ sender: Any) {

@@ -12,6 +12,7 @@ target 'owt-tiny-mvvm' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RealmSwift'
+  pod 'SVProgressHUD', '~> 2.2'
 
   target 'owt-tiny-mvvmTests' do
     inherit! :search_paths
