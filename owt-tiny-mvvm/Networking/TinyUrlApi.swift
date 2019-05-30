@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 
 protocol TinyUrlApiService {
+    // Next step set a Result Type 
     func transformUrl(withQuery query: String, completion: @escaping (String, Bool) -> ())
 }
 

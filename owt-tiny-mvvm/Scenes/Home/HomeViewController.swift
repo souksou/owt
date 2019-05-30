@@ -28,9 +28,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //debugPrint("\(Realm.Configuration.defaultConfiguration.fileURL)")
-        
+     
         // Do any additional setup after loading the view.
         tableView.register(TinyUrlTableViewCell.self, forCellReuseIdentifier: "Cell")
         let nib = UINib(nibName: "TinyUrlTableViewCell", bundle:nil)
