@@ -10,13 +10,16 @@ import UIKit
 import Alamofire
 
 protocol TinyUrlApiService {
-    func transformUrl(withQuery query: String, completion: @escaping (String) -> ())
+    func transformUrl(withQuery query: String, completion: @escaping (String, Bool) -> ())
 }
 
 final class TinyUrlApi : TinyUrlApiService {        
-    func transformUrl(withQuery query: String, completion: @escaping (String) -> ()) {        Alamofire.request("http://tinyurl.com/api-create.php?url=https://www.google.com").responseString { response in
-        
-            completion("test")
+    func transformUrl(withQuery query: String, completion: @escaping (String, Bool) -> ()) {        Alamofire.request("\(Constants.baseUrl)\(Constants.createEndpoint)\(query)").responseString { response in
+            if let data = response.data {
+                completion(String(data: data, encoding: .utf8)!, true)
+            } else {
+                completion("", false)
+            }
         }
     }
 }
