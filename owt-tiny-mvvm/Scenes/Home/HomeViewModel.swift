@@ -59,7 +59,7 @@ class HomeViewModel {
     private func startSearchWithQuery(_ query: String) {
         isRefreshing?(true)
         
-        let tinyUrls = DatabaseManager.shared.searchTinyUrl(query: query)
+        let tinyUrls = DatabaseManager.shared.searchTinyUrl(query: query.lowercased())
         self.finishSearching(with: tinyUrls)
     }
 

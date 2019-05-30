@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class CreateTinyUrlViewModel {
     
+    // outputs
     var isRefreshing: ((Bool) -> Void)?
     var hasError: ((String) -> Void)?
     var didTransformUrl: ((Bool) -> Void)?
@@ -32,7 +34,7 @@ class CreateTinyUrlViewModel {
          isRefreshing?(true)
         var urlFinal = url
         
-        if(!url.contains("https://") || !url.contains("http://")) {
+        if(!url.contains("https://") && !url.contains("http://")) {
             urlFinal = "https://\(url)"
         }
         
@@ -41,7 +43,7 @@ class CreateTinyUrlViewModel {
             return
         }
         
-        networkingService.transformUrl(withQuery: url) { [weak self] (urlTransform, success) in
+        networkingService.transformUrl(withQuery: urlFinal) { [weak self] (urlTransform, success) in
             
             guard let strongSelf  = self else { return }
             
@@ -51,6 +53,8 @@ class CreateTinyUrlViewModel {
             tiny.urlTransform = urlTransform
             tiny.dateCreate = Date()
             DatabaseManager.shared.add(tinyUrls: tiny)
+            
+            UIPasteboard.general.string = urlTransform
             
             strongSelf.finishTransform()
             strongSelf.didTransformUrl?(true)

@@ -28,12 +28,12 @@ class DatabaseManager {
     
     func searchTinyUrl(query: String) -> [TinyUrl] {
         let predicate = NSPredicate(format: "originalUrl CONTAINS %@", query)
-        let tinyUrisFilter = realm.objects(TinyUrl.self).filter(predicate).sorted(byKeyPath: "dateCreate")
+        let tinyUrisFilter = realm.objects(TinyUrl.self).filter(predicate).sorted(byKeyPath: "dateCreate", ascending: false)
         return Array(tinyUrisFilter)
     }
     
     func fetchTinyUrl() -> [TinyUrl] {
-        let uris = realm.objects(TinyUrl.self).sorted(byKeyPath: "dateCreate")
+        let uris = realm.objects(TinyUrl.self).sorted(byKeyPath: "dateCreate", ascending: false)
         return Array(uris)
     }
     

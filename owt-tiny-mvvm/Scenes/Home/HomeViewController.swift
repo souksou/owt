@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
 
     private var searchViewController: UISearchController?
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var emptyLabel: UILabel!
     
     let dateFormatter: DateFormatter = {
         var df = DateFormatter()
@@ -28,7 +29,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        debugPrint("\(Realm.Configuration.defaultConfiguration.fileURL)")
+        //debugPrint("\(Realm.Configuration.defaultConfiguration.fileURL)")
         
         // Do any additional setup after loading the view.
         tableView.register(TinyUrlTableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -53,22 +54,32 @@ class HomeViewController: UIViewController {
         }
         viewModel.didUpdateTiny = { [weak self] tinyUrls in
             guard let strongSelf = self else { return }
+            
+            if tinyUrls.count == 0 {
+                strongSelf.tableView.isHidden  = true
+                strongSelf.emptyLabel.isHidden = false
+            } else {
+                strongSelf.tableView.isHidden  = false
+                strongSelf.emptyLabel.isHidden = true
+            }
             strongSelf.tinyUrls = tinyUrls
             strongSelf.tableView.reloadData()
         }
     }
     
     func setupNavController() {
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.prefersLargeTitles = false               
         
         self.searchViewController = UISearchController(searchResultsController: nil)
         self.searchViewController?.searchResultsUpdater = self
-        self.searchViewController?.searchBar.tintColor = .white
-        
+        self.searchViewController?.searchBar.delegate   = self
+        self.searchViewController?.searchBar.tintColor  = .white
         self.searchViewController?.dimsBackgroundDuringPresentation = false
+        
         let textFieldInsideSearchBar = self.searchViewController?.searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = .white
         textFieldInsideSearchBar?.tintColor = .white
+        
         navigationItem.searchController = self.searchViewController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -106,13 +117,20 @@ extension HomeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let data = tinyUrls else { return }  
+        if let url = URL(string: data[indexPath.row].urlTransform) {
+            UIApplication.shared.open(url)
+        }
     }
 }
 
-extension HomeViewController: UISearchResultsUpdating {
+extension HomeViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
        viewModel.didChangeQuery(searchController.searchBar.text ?? "")
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.ready()
     }
 }
 

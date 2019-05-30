@@ -18,6 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No result, please transform your url with the &quot;+&quot; button" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd1-hf-MiO">
+                                <rect key="frame" x="20" y="367" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TAZ-CX-OmR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6vC-gt-tBL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -26,13 +35,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6vC-gt-tBL" firstAttribute="top" secondItem="Gaw-Hh-pxR" secondAttribute="top" id="EQZ-wN-APD"/>
+                            <constraint firstAttribute="trailing" secondItem="yd1-hf-MiO" secondAttribute="trailing" constant="20" id="Hdi-tD-wvb"/>
+                            <constraint firstItem="yd1-hf-MiO" firstAttribute="centerX" secondItem="Gaw-Hh-pxR" secondAttribute="centerX" id="Jpz-do-csX"/>
+                            <constraint firstItem="yd1-hf-MiO" firstAttribute="centerY" secondItem="Gaw-Hh-pxR" secondAttribute="centerY" constant="5" id="Noh-Qg-9HN"/>
+                            <constraint firstItem="yd1-hf-MiO" firstAttribute="leading" secondItem="Gaw-Hh-pxR" secondAttribute="leading" constant="20" id="PCU-pv-UHl"/>
                             <constraint firstItem="Gaw-Hh-pxR" firstAttribute="bottom" secondItem="6vC-gt-tBL" secondAttribute="bottom" id="XjU-UD-l9O"/>
                             <constraint firstItem="Gaw-Hh-pxR" firstAttribute="trailing" secondItem="6vC-gt-tBL" secondAttribute="trailing" id="mGK-4K-XH3"/>
                             <constraint firstItem="6vC-gt-tBL" firstAttribute="leading" secondItem="k3S-ci-MBi" secondAttribute="leading" id="mhD-tQ-aB9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gaw-Hh-pxR"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2lI-wi-1Kj">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="2lI-wi-1Kj">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="add" id="4F0-hv-rUz">
                             <color key="tintColor" red="0.86793524030000002" green="0.41489198799999999" blue="0.21561264990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
@@ -41,6 +54,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyLabel" destination="yd1-hf-MiO" id="jfb-YC-x8H"/>
                         <outlet property="tableView" destination="6vC-gt-tBL" id="ctV-ny-jul"/>
                     </connections>
                 </viewController>
