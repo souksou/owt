@@ -11,17 +11,16 @@ import XCTest
 
 class owt_tiny_mvvmTests: XCTestCase {
 
+    var sut: URLSession!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        sut = URLSession(configuration: .default)
     }
-
+    
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        sut = nil
+        super.tearDown()
     }
 
     func testPerformanceExample() {
@@ -29,6 +28,55 @@ class owt_tiny_mvvmTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testValidCallToTinyGetsHTTPStatusCode200() {
+ 
+        let url = URL(string: "http://tinyurl.com/api-create.php?url=https://www.google.com")
+        let promise = expectation(description: "Status code: 200")
+
+        let dataTask = sut.dataTask(with: url!) { data, response, error in
+            if let error = error {
+                XCTFail("Error: \(error.localizedDescription)")
+                return
+            } else if let statusCode = (response as? HTTPURLResponse)?.statusCode {
+                if statusCode == 200 {
+                    promise.fulfill()
+                } else {
+                    XCTFail("Status code: \(statusCode)")
+                }
+            }
+        }
+        dataTask.resume()
+        
+        wait(for: [promise], timeout: 5)
+    }
+    
+    func testTinyValidUrl() {
+        let url = URL(string: "http://tinyurl.com/api-create.php?url=https://www.google.com")
+        let promise = expectation(description: "Return correct Tiny Url")
+        
+        let dataTask = sut.dataTask(with: url!) { data, response, error in
+            if let error = error {
+                XCTFail("Error: \(error.localizedDescription)")
+                return
+            }
+            
+            if data == nil {
+                XCTFail("no data")
+                return
+            }
+            
+            let result = String(data: data!, encoding: .utf8)
+            if (result?.contains("http://tinyurl.com/"))! {
+                promise.fulfill()
+            } else {
+                XCTFail("Url no valid")
+            }
+        }
+        dataTask.resume()
+        
+        wait(for: [promise], timeout: 5)
     }
 
 }
