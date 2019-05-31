@@ -65,29 +65,7 @@ class CreateTinyUrlViewModel {
                 strongSelf.hasError?("Error")
                 break
             }
-        }
-        
-//        networkingService.transformUrl(withQuery: urlFinal) { [weak self] (urlTransform, success) in
-//
-//            guard let strongSelf  = self else { return }
-//
-//            if success {
-//                // create Tiny and save
-//                let tiny = TinyUrl()
-//                tiny.originalUrl = url
-//                tiny.urlTransform = urlTransform
-//                tiny.dateCreate = Date()
-//                DatabaseManager.shared.add(tinyUrls: tiny)
-//
-//                UIPasteboard.general.string = urlTransform
-//
-//                strongSelf.finishTransform()
-//                strongSelf.didTransformUrl?(true)
-//            } else {
-//                 strongSelf.finishTransform()
-//                 strongSelf.hasError?("Error with the script")
-//            }
-//        }
+        }        
     }
     
     private func finishTransform() {

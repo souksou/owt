@@ -28,7 +28,8 @@
 		5F78217922A050BA001A459A /* TinyUrlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F78217722A050BA001A459A /* TinyUrlTableViewCell.xib */; };
 		5FE538E222A1104500DE9938 /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE538E122A1104500DE9938 /* ErrorResult.swift */; };
 		5FE538E422A1107500DE9938 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE538E322A1107500DE9938 /* Result.swift */; };
-		5FE538E622A1167700DE9938 /* UrlTransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE538E522A1167700DE9938 /* UrlTransformTests.swift */; };
+		5FE538E622A1167700DE9938 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		5FE538E922A11A3600DE9938 /* UrlTransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE538E822A11A3600DE9938 /* UrlTransformTests.swift */; };
 		96EEA3B432893A4326CB53FD /* Pods_owt_tiny_mvvmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C5D998EAC8959DF66DA752 /* Pods_owt_tiny_mvvmTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		5F78217722A050BA001A459A /* TinyUrlTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TinyUrlTableViewCell.xib; sourceTree = "<group>"; };
 		5FE538E122A1104500DE9938 /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		5FE538E322A1107500DE9938 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		5FE538E822A11A3600DE9938 /* UrlTransformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlTransformTests.swift; sourceTree = "<group>"; };
 		782DD183EA350B11FD012186 /* Pods-owt-tiny-mvvmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-owt-tiny-mvvmUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-owt-tiny-mvvmUITests/Pods-owt-tiny-mvvmUITests.release.xcconfig"; sourceTree = "<group>"; };
 		989F91886612CAAA5F861899 /* Pods-owt-tiny-mvvmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-owt-tiny-mvvmUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-owt-tiny-mvvmUITests/Pods-owt-tiny-mvvmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE12D9C62AD039EB32B1B628 /* Pods-owt-tiny-mvvmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-owt-tiny-mvvmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-owt-tiny-mvvmTests/Pods-owt-tiny-mvvmTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				5F78214322A02DBE001A459A /* ServiceApiTests.swift */,
-				5FE538E522A1167700DE9938 /* UrlTransformTests.swift */,
+				5FE538E822A11A3600DE9938 /* UrlTransformTests.swift */,
 				5F78214522A02DBE001A459A /* Info.plist */,
 			);
 			path = "owt-tiny-mvvmTests";
@@ -510,8 +512,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FE538E622A1167700DE9938 /* UrlTransformTests.swift in Sources */,
+				5FE538E622A1167700DE9938 /* (null) in Sources */,
 				5F78214422A02DBE001A459A /* ServiceApiTests.swift in Sources */,
+				5FE538E922A11A3600DE9938 /* UrlTransformTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
