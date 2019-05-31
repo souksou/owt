@@ -39,6 +39,7 @@ class CreateTinyUrlViewModel {
         }
         
         if !urlFinal.isValidURL() {
+            self.finishTransform()
             hasError?("Not a valid URL")
             return
         }
@@ -47,23 +48,26 @@ class CreateTinyUrlViewModel {
             
             guard let strongSelf  = self else { return }
             
-            // create Tiny and save
-            let tiny = TinyUrl()
-            tiny.originalUrl = url
-            tiny.urlTransform = urlTransform
-            tiny.dateCreate = Date()
-            DatabaseManager.shared.add(tinyUrls: tiny)
-            
-            UIPasteboard.general.string = urlTransform
-            
-            strongSelf.finishTransform()
-            strongSelf.didTransformUrl?(true)
+            if success {
+                // create Tiny and save
+                let tiny = TinyUrl()
+                tiny.originalUrl = url
+                tiny.urlTransform = urlTransform
+                tiny.dateCreate = Date()
+                DatabaseManager.shared.add(tinyUrls: tiny)
+                
+                UIPasteboard.general.string = urlTransform
+                
+                strongSelf.finishTransform()
+                strongSelf.didTransformUrl?(true)
+            } else {
+                 strongSelf.finishTransform()
+                 strongSelf.hasError?("Error with the script")
+            }
         }
     }
     
     private func finishTransform() {
         isRefreshing?(false)  
     }
-    
-    
 }

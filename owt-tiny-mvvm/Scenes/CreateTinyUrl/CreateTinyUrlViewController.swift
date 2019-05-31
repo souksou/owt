@@ -28,7 +28,11 @@ class CreateTinyUrlViewController: UIViewController {
     private func setupViewModel() {
 
         viewModel.isRefreshing = { loading in
-            SVProgressHUD.show()
+            if loading {
+                SVProgressHUD.show()
+            } else {
+                SVProgressHUD.dismiss()
+            }          
         }
         viewModel.didTransformUrl = { [weak self] success in
             guard let strongSelf = self else { return }
