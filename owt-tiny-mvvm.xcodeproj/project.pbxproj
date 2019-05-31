@@ -13,7 +13,7 @@
 		5F78213422A02DBC001A459A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F78213222A02DBC001A459A /* Main.storyboard */; };
 		5F78213622A02DBE001A459A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F78213522A02DBE001A459A /* Assets.xcassets */; };
 		5F78213922A02DBE001A459A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F78213722A02DBE001A459A /* LaunchScreen.storyboard */; };
-		5F78214422A02DBE001A459A /* owt_tiny_mvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F78214322A02DBE001A459A /* owt_tiny_mvvmTests.swift */; };
+		5F78214422A02DBE001A459A /* ServiceApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F78214322A02DBE001A459A /* ServiceApiTests.swift */; };
 		5F78214F22A02DBE001A459A /* owt_tiny_mvvmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F78214E22A02DBE001A459A /* owt_tiny_mvvmUITests.swift */; };
 		5F78216122A03231001A459A /* TinyUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F78216022A03231001A459A /* TinyUrl.swift */; };
 		5F78216522A03393001A459A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F78216422A03393001A459A /* HomeViewController.swift */; };
@@ -26,6 +26,7 @@
 		5F78217422A03BC6001A459A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F78217322A03BC6001A459A /* Constants.swift */; };
 		5F78217822A050BA001A459A /* TinyUrlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F78217622A050BA001A459A /* TinyUrlTableViewCell.swift */; };
 		5F78217922A050BA001A459A /* TinyUrlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F78217722A050BA001A459A /* TinyUrlTableViewCell.xib */; };
+		5FE538E622A1167700DE9938 /* UrlTransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE538E522A1167700DE9938 /* UrlTransformTests.swift */; };
 		96EEA3B432893A4326CB53FD /* Pods_owt_tiny_mvvmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C5D998EAC8959DF66DA752 /* Pods_owt_tiny_mvvmTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +61,7 @@
 		5F78213822A02DBE001A459A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F78213A22A02DBE001A459A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F78213F22A02DBE001A459A /* owt-tiny-mvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "owt-tiny-mvvmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F78214322A02DBE001A459A /* owt_tiny_mvvmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = owt_tiny_mvvmTests.swift; sourceTree = "<group>"; };
+		5F78214322A02DBE001A459A /* ServiceApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApiTests.swift; sourceTree = "<group>"; };
 		5F78214522A02DBE001A459A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F78214A22A02DBE001A459A /* owt-tiny-mvvmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "owt-tiny-mvvmUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F78214E22A02DBE001A459A /* owt_tiny_mvvmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = owt_tiny_mvvmUITests.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		5F78217322A03BC6001A459A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F78217622A050BA001A459A /* TinyUrlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyUrlTableViewCell.swift; sourceTree = "<group>"; };
 		5F78217722A050BA001A459A /* TinyUrlTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TinyUrlTableViewCell.xib; sourceTree = "<group>"; };
+		5FE538E522A1167700DE9938 /* UrlTransformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlTransformTests.swift; sourceTree = "<group>"; };
 		782DD183EA350B11FD012186 /* Pods-owt-tiny-mvvmUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-owt-tiny-mvvmUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-owt-tiny-mvvmUITests/Pods-owt-tiny-mvvmUITests.release.xcconfig"; sourceTree = "<group>"; };
 		989F91886612CAAA5F861899 /* Pods-owt-tiny-mvvmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-owt-tiny-mvvmUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-owt-tiny-mvvmUITests/Pods-owt-tiny-mvvmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE12D9C62AD039EB32B1B628 /* Pods-owt-tiny-mvvmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-owt-tiny-mvvmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-owt-tiny-mvvmTests/Pods-owt-tiny-mvvmTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,7 +163,8 @@
 		5F78214222A02DBE001A459A /* owt-tiny-mvvmTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F78214322A02DBE001A459A /* owt_tiny_mvvmTests.swift */,
+				5F78214322A02DBE001A459A /* ServiceApiTests.swift */,
+				5FE538E522A1167700DE9938 /* UrlTransformTests.swift */,
 				5F78214522A02DBE001A459A /* Info.plist */,
 			);
 			path = "owt-tiny-mvvmTests";
@@ -500,7 +503,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F78214422A02DBE001A459A /* owt_tiny_mvvmTests.swift in Sources */,
+				5FE538E622A1167700DE9938 /* UrlTransformTests.swift in Sources */,
+				5F78214422A02DBE001A459A /* ServiceApiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,7 +675,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93992VFD6A;
 				INFOPLIST_FILE = "owt-tiny-mvvm/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.th.owt-tiny-mvvm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -687,7 +694,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93992VFD6A;
 				INFOPLIST_FILE = "owt-tiny-mvvm/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.th.owt-tiny-mvvm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -704,7 +714,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93992VFD6A;
 				INFOPLIST_FILE = "owt-tiny-mvvmTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.th.owt-tiny-mvvmTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -722,7 +736,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93992VFD6A;
 				INFOPLIST_FILE = "owt-tiny-mvvmTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.th.owt-tiny-mvvmTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -739,7 +757,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93992VFD6A;
 				INFOPLIST_FILE = "owt-tiny-mvvmUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.th.owt-tiny-mvvmUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -756,7 +778,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93992VFD6A;
 				INFOPLIST_FILE = "owt-tiny-mvvmUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.th.owt-tiny-mvvmUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

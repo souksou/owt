@@ -61,8 +61,8 @@ class CreateTinyUrlViewModel {
                 strongSelf.finishTransform()
                 strongSelf.didTransformUrl?(true)
             } else {
-                 strongSelf.finishTransform()
-                 strongSelf.hasError?("Error with the script")
+                strongSelf.finishTransform()
+                strongSelf.hasError?("Error with the script")
             }
         }
     }
